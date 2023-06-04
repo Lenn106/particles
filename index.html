@@ -4,188 +4,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lenn106 - Bio Website</title>
+  <title>Particle Background Tutorial</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
   <style>
-   body {
-      color: #ffffff;
-      font-family: Arial, sans-serif;
+    /* CSS styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f1f1f1;
       margin: 0;
+      padding: 0;
     }
 
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background-color: #111;
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-    }
-
-    h1 {
+    .header {
+      background-color: #333;
       color: #ffffff;
-      margin: 0;
-      padding: 20px;
-      background-color: #323232;
+      padding: 10px;
       text-align: center;
     }
 
     .container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      height: 80vh; /* Adjust the height value as desired */
-    }
-
-    .box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px; /* Adjust the padding value as desired */
-      background-color: #323232;
+      margin: 20px;
+      background-color: #333;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      width: 60%; /* Adjust the width value as desired */
-      max-width: 400px;
-      margin-top: 120px;
-      position: relative; /* Added */
-    }
-
-    .box button {
-      margin-bottom: 10px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      background-color: #323232;
-      color: #ffffff;
-      cursor: pointer;
-      outline: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .box button:hover {
-      background-color: #525252;
-    }
-
-    .search-bar {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .search-bar input {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #525252;
-      color: #ffffff;
-      font-size: 14px;
-      caret-color: #ffffff;
-      outline: none;
-    }
-
-    .search-results {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      background-color: #525252;
-      color: #ffffff;
-      border-radius: 5px;
-      font-size: 14px;
-      display: none;
-      z-index: 1; /* Added */
-    }
-
-    .search-results.open {
-      display: block;
-    }
-
-    .search-results .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 5px;
-      color: #ffffff;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
+      outline: 2px solid #ffffff;
+      color: #ffffff; /* Updated: Text color */
     }
 
     .footer {
-      background-color: #323232;
-      height: 100px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff;
-      font-size: 14px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
     }
 
-    .footer a {
-      color: #ffffff;
+    /* Particle Background Styles */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #333;
+      background-image: url('');
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+    
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #333;
+      border-radius: 5px;
+      font-weight: bold;
       text-decoration: none;
+      margin-right: 10px;
     }
   </style>
 </head>
 
 <body>
   <div id="particles-js"></div>
-  <h1>Lenn106</h1>
+  <div class="header">
+    <h1>Particle Background Tutorial</h1>
+  </div>
   <div class="container">
-    <div class="box">
-      <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search..." onkeyup="handleSearch(event)">
-      </div>
-      <div id="searchResults" class="search-results"></div>
-      <button onclick="window.location.href='https://lenn106.github.io/projects'">GitHub Projects</button>
-      <button onclick="window.location.href='https://lenn106.github.io/about'">About Me</button>
-      <button onclick="window.location.href='https://lenn106.github.io/videos'">Videos </button>
-      <button onclick="window.location.href='https://lenn106.github.io/extras'">Extras</button>
-      <button onclick="window.location.href='https://lenn106.github.io/settings'">Settings</button>
+    <h2>Particle Background Documentation</h2>
+    <p>
+      This tutorial provides instructions on how to implement the particle background effect using Particle.js library.
+    </p>
+    <h3>Step 1: Include Particle.js Library</h3>
+    <p>
+      To create the particle background effect, you need to include the Particle.js library. You can download the library from the Particle.js GitHub repository or include it using a Content Delivery Network (CDN). Here's an example of including it via CDN:
+    </p>
+    <pre><code>&lt;script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"&gt;&lt;/script&gt;</code></pre>
+    <h3>Step 2: Add a Container Element</h3>
+    <p>
+      Create a container element where the particle background will be displayed. You can use a div element with a unique ID. For example:
+    </p>
+    <pre><code>&lt;div id="particles-js"&gt;&lt;/div&gt;</code></pre>
+    <h3>Step 3: Initialize Particle.js</h3>
+    <p>
+      Initialize Particle.js with your desired configuration. Here's an example of initializing it in a script tag:
+    </p>
+    <pre><code>particlesJS("particles-js", {
+  // Configuration options
+});</code></pre>
+    <p>
+      You can customize the particle effect by modifying the configuration options according to your preferences. Refer to the Particle.js documentation for more details.
+    </p>
+    <h3>Step 4: Customize Styling and Content</h3>
+    <p>
+      Customize the styling and content of your website as desired. You can modify the CSS styles and HTML structure to match your design requirements.
+    </p>
+    
+    <!-- Button to open template website -->
+    <div class="button-container">
+      <a class="button" href="https://lenn106.github.io/template" target="_blank">Open Template Website</a>
+      <button class="button" onclick="copyCode()">Copy Website Code</button>
     </div>
-  </div>
-  <div class="footer">
-    <p>All software on this website is open source and free to use, unless otherwise stated. Learn more at <a href="https://unlicense.org/" target="_blank" rel="noopener noreferrer">https://unlicense.org/</a></p>
-  </div>
+    
+    <script>
+      // Function to copy the website code to clipboard
+      function copyCode() {
+        const code = `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particle Background Website</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #333;
+      background-image: url('');
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-particlesJS("particles-js", {
+    particlesJS("particles-js", {
       particles: {
         number: {
-          value: 80,
+          value: 100,
           density: {
             enable: true,
-            value_area: 800,
-          },
+            value_area: 800
+          }
         },
         color: {
-          value: "#ffffff",
+          value: "#ffffff"
         },
         shape: {
           type: "circle",
           stroke: {
             width: 0,
-            color: "#000000",
+            color: "#000000"
           },
           polygon: {
-            nb_sides: 5,
-          },
-          image: {
-            src: "img/github.svg",
-            width: 100,
-            height: 100,
-          },
+            nb_sides: 5
+          }
         },
         opacity: {
           value: 0.5,
@@ -194,8 +178,8 @@ particlesJS("particles-js", {
             enable: false,
             speed: 1,
             opacity_min: 0.1,
-            sync: false,
-          },
+            sync: false
+          }
         },
         size: {
           value: 3,
@@ -204,19 +188,19 @@ particlesJS("particles-js", {
             enable: false,
             speed: 40,
             size_min: 0.1,
-            sync: false,
-          },
+            sync: false
+          }
         },
         line_linked: {
           enable: true,
           distance: 150,
           color: "#ffffff",
           opacity: 0.4,
-          width: 1,
+          width: 1
         },
         move: {
           enable: true,
-          speed: 2,
+          speed: 6,
           direction: "none",
           random: false,
           straight: false,
@@ -225,126 +209,186 @@ particlesJS("particles-js", {
           attract: {
             enable: false,
             rotateX: 600,
-            rotateY: 1200,
-          },
-        },
+            rotateY: 1200
+          }
+        }
       },
       interactivity: {
         detect_on: "canvas",
         events: {
           onhover: {
-            enable: false,
-            mode: "repulse",
+            enable: true,
+            mode: "repulse"
           },
           onclick: {
-            enable: false,
-            mode: "push",
+            enable: true,
+            mode: "push"
           },
-          resize: true,
+          resize: true
         },
         modes: {
           grab: {
             distance: 400,
             line_linked: {
-              opacity: 1,
-            },
+              opacity: 1
+            }
           },
           bubble: {
             distance: 400,
             size: 40,
             duration: 2,
             opacity: 8,
-            speed: 3,
+            speed: 3
           },
           repulse: {
-            distance: 200,
-            duration: 0.4,
+            distance: 200
           },
           push: {
-            particles_nb: 4,
+            particles_nb: 4
           },
           remove: {
-            particles_nb: 2,
-          },
-        },
+            particles_nb: 2
+          }
+        }
       },
-      retina_detect: true,
+      retina_detect: true
+    });
+  </script>
+</body>
+
+</html>
+    </script>
+  </div>
+  <div class="footer">
+    <p>This tutorial provides documentation on how to implement the particle background effect using Particle.js library.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 100,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: "#ffffff"
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000"
+          },
+          polygon: {
+            nb_sides: 5
+          }
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          },
+          onclick: {
+            enable: true,
+            mode: "push"
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3
+          },
+          repulse: {
+            distance: 200
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true
     });
   </script>
   <script>
-    function handleSearch(event) {
-      if (event.key === 'Enter') {
-        const searchInput = document.getElementById('searchInput');
-        const searchQuery = searchInput.value.toLowerCase();
-        const searchResults = document.getElementById('searchResults');
-
-        // Define the search result data
-        const searchResultData = {
-          neomenu: {
-            title: 'Neo Menu',
-            description: 'An Old i-Ready Hack I made.',
-            link: 'https://lenn106.github.io/NeoMenu'
-          },
-          youtube: {
-            title: 'HELP',
-            description: 'please help me I dont know how search bars work',
-            link: 'https://dsc.gg/lenn106'
-          },
-          discord: {
-            title: 'Here is my Discord Server',
-            description: 'AH',
-            link: 'https://dsc.gg/lenn106'
-          },
-        };
-
-        // Retrieve the blocked words
-        fetch('https://raw.githubusercontent.com/Lenn106/lenn106.github.io/998250d77ac5397e0274ba8872f18ea94aed52f2/swearlist')
-          .then(response => response.text())
-          .then(data => {
-            const blockedWords = data.split(',');
-
-            if (searchQuery.trim().length > 0) {
-              if (containsBlockedWords(searchQuery, blockedWords)) {
-                searchResults.innerHTML = 'This search contains blocked words.';
-                searchResults.classList.add('open');
-              } else if (searchQuery === 'chachaslide') {
-                const audio = new Audio('https://github.com/Lenn106/lenn106.github.io/raw/c6931511fce0f17c386f4fa3e1d925a93c15eb57/chacha.mp3');
-                audio.play();
-              } else if (searchQuery in searchResultData) {
-                const resultHTML = `
-                  <h3>${searchResultData[searchQuery].title}</h3>
-                  <p>${searchResultData[searchQuery].description}</p>
-                  <a href="${searchResultData[searchQuery].link}">Learn More</a>
-                  <button class="close-button" onclick="closeSearchResults()">X</button>
-                `;
-                searchResults.innerHTML = resultHTML;
-                searchResults.classList.add('open');
-              } else {
-                searchResults.innerHTML = `No results found for "${searchQuery}".`;
-                searchResults.classList.add('open');
-              }
-            } else {
-              searchResults.innerHTML = '';
-              searchResults.classList.remove('open');
-            }
+  function copyCode() {
+    fetch("https://raw.githubusercontent.com/Lenn106/particle/master/index.html")
+      .then((response) => response.text())
+      .then((code) => {
+        navigator.clipboard.writeText(code)
+          .then(() => {
+            alert("Website code copied to clipboard!");
           })
-          .catch(error => {
-            console.error('Error retrieving blocked words:', error);
+          .catch((error) => {
+            console.error("Failed to copy website code: ", error);
           });
-      }
-    }
+      })
+      .catch((error) => {
+        console.error("Failed to fetch website code: ", error);
+      });
+  }
+</script>
 
-    function containsBlockedWords(query, blockedWords) {
-      const words = query.toLowerCase().split(' ');
-      return words.some(word => blockedWords.includes(word));
-    }
-
-    function closeSearchResults() {
-      const searchResults = document.getElementById('searchResults');
-      searchResults.innerHTML = '';
-      searchResults.classList.remove('open');
-    }
-  </script>
 </body>
 
 </html>
